@@ -11,9 +11,21 @@ class Game < ApplicationRecord
     }
   }
 
+  def cells_with_mines
+    mines = []
+    board.each_with_index do |row, i|
+      row.each_with_index do |cell, j|
+        cell = Cell.new(cell)
+        mines.push([i, j]) if cell.mine
+      end
+    end
+    mines
+  end
+
   private
 
   def make_board
-    self.board = Array.new(rows, Array.new(cols))
+    self.board = Array.new(rows, Array.new(cols, Cell.new))
+    GameManager::BoardInitializer.call(self)
   end
 end
