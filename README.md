@@ -1,6 +1,11 @@
 Minesweeper
 ============
 
+Live version
+--------------
+
+[MeruTechnicalTest](https://meru-technical-test.herokuapp.com/)
+
 What to build
 --------------
 Develop the classic game of [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game))
@@ -33,3 +38,12 @@ Decisions
 * The update and delete methods on games were not considered to not alter the games 
   on the game REST inteface, it will be modified on another interface 
   (such as moves or cells or something like that)
+  
+### Second batch
+* Give up on the TDD (for now :sweat_smile:)
+* Add a class to represent a cell with the following attributes
+  * mark: to represent a question mark or a flag
+  * value: the number of mines adjacent
+  * mine: to represent if the cell is a mine or not
+  * open: to represent if the cell has been revealed
+* add two services to build the board randomly with the params passed
