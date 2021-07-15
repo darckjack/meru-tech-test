@@ -53,3 +53,11 @@ Decisions
 * I started working on the cells update.
 * at the moment the user could flag, mark or open the cell.
 * I'm thinking of making a service to handle all the logic of the update.
+
+
+### Fourth batch
+* add the logic to reveal multiple cells, got an error with a recursive function
+but it was caused by the lifetime of the objects.
+  
+* Still thinking on the logic for the win condition and the guard to not modify 
+finished games.
