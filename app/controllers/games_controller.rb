@@ -24,6 +24,20 @@ class GamesController < ApplicationController
     end
   end
 
+  # GET /games/finished
+  def finished
+    @games = Game.finished
+
+    render json: @games
+  end
+
+  # GET /games/in-progress
+  def in_progress
+    @games = Game.not_finished
+
+    render json: @games
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

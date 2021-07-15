@@ -11,8 +11,8 @@ module PlayManager
       @cell = Cell.new(@game.board[@row][@col])
       @cell.mark = @mark if @mark
       @cell.open = true unless @mark
-      @game.status = 2 if @game.status == 1
-      @game.status = 3 if @cell.mine
+      @game.status = 1 if @game.status == 0
+      @game.status = 2 if @cell.mine
 
       reveal_cells(@row, @col) if @cell.value.zero?
 

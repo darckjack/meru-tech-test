@@ -8,7 +8,7 @@ class CellsController < ApplicationController
 
   # PUT/PATCH /games/1/cells/1/1
   def update
-    PlayManager::PlayUpdater.call(@game, @row, @col, @mark)
+    PlayManager::PlayUpdater.call(@game, @row, @col, @mark) unless @game.status == 2
     render json: @game
   end
 
