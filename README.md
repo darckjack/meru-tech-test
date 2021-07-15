@@ -61,3 +61,59 @@ but it was caused by the lifetime of the objects.
   
 * Still thinking on the logic for the win condition and the guard to not modify 
 finished games.
+  
+### Fifth batch
+* add the logic to check the win of a game
+* add a new route to check the unfinished games
+* add a new route to check the finished games
+* add a constraint to the resource of game to match the new routes of finished and unfinished
+
+---------------------------------------------
+
+API
+====
+
+Games
+------
+
+### Show all games
+```
+GET /games
+```
+
+### Show a single game
+```
+GET /games/:id
+```
+
+### Create a new game
+```
+POST /games
+```
+#### params
+* rows: number of rows that the board will have
+* cols: number of columns that the board will have
+* mines: number of mines in the board
+
+### Show all the unfinished games
+```
+GET /games/in-progress
+```
+
+### Show all finished games
+```
+GET /games/finished
+```
+
+### 'Click' a cell
+```
+PUT/PATCH /games/:id/cells/:row/:col
+```
+
+### 'Mark' a cell
+```
+PUT/PATCH /games/:id/cells/:row/:col
+```
+
+#### params
+* mark: the mark on the cell (flag, question)
