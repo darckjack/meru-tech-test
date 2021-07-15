@@ -47,3 +47,9 @@ Decisions
   * mine: to represent if the cell is a mine or not
   * open: to represent if the cell has been revealed
 * add two services to build the board randomly with the params passed
+
+
+### Third batch
+* I started working on the cells update.
+* at the moment the user could flag, mark or open the cell.
+* I'm thinking of making a service to handle all the logic of the update.
